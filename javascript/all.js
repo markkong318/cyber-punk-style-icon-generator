@@ -120,40 +120,68 @@ $(window).konami({
   }
 });
 
+function rgbSplit(imageData, options) {
+  const { rOffset = 0, gOffset = 0, bOffset = 0 } = options;
+
+  const originalArray = imageData.data;
+  const newArray = new Uint8ClampedArray(originalArray);
+
+  for (let i = 0; i < originalArray.length; i += 4) {
+    newArray[i + 0 + rOffset * 4] = originalArray[i + 0]; // 🔴
+    newArray[i + 1 + gOffset * 4] = originalArray[i + 1]; // 🟢
+    newArray[i + 2 + bOffset * 4] = originalArray[i + 2]; // 🔵
+  }
+
+  return new ImageData(newArray, imageData.width, imageData.height);
+}
+
 function createImage(template,source,x,y,w,h){
   var cover = new Image();
   cover.src = 'images/object/'+template+'.png';
 
-  var userimage = new Image();
-  userimage.src = source;
+  cover.onload = function(){
+    var userimage = new Image();
+    userimage.src = source;
 
-  var resize_canvas = document.getElementById("result");
-  resize_canvas.width = 500;
-  resize_canvas.height = 500;
+    userimage.onload = function(){
+      var resize_canvas = document.getElementById("result");
+      resize_canvas.width = 500;
+      resize_canvas.height = 500;
 
-  var ctx = resize_canvas.getContext("2d");
-  ctx.rect(0,0,500,500);
-  ctx.fillStyle="#CCCCCC";
-  ctx.fill();
-  ctx.drawImage(userimage,x,y,w,h);
-  ctx.drawImage(cover,0,0,500,500);
+      var ctx = resize_canvas.getContext("2d");
+      ctx.rect(0,0,500,500);
+      ctx.fillStyle="#CCCCCC";
+      ctx.fill();
+      ctx.drawImage(userimage,x,y,w,h);
 
-  var base64 = resize_canvas.toDataURL("image/png");
+      const imageData = ctx.getImageData(0, 0, 500, 500);
+      const updatedImageData = rgbSplit(imageData, {
+        rOffset: 20,
+        gOffset: -10,
+        bOffset: 10
+      });
+      ctx.putImageData(updatedImageData, 0, 0);
 
-  // check ie or not
-  var ua = window.navigator.userAgent;
-  var msie = ua.indexOf("MSIE ");
-  if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
-    var html="<p>請按右鍵另存圖片</p>";
-    html+="<img src='"+base64+"' alt='10'/>";
-    var tab=window.open();
-    tab.document.write(html);
-  }
-  else{
-    $('#download').attr('href',base64);
-    $('#download').attr('download',(+ new Date())+'.png');
-    $('#download')[0].click();
-    ga('send', 'event', 'download', 'pic', (+ new Date()));
+      ctx.drawImage(cover,0,0,500,500);
+
+      var base64 = resize_canvas.toDataURL("image/png");
+
+      // check ie or not
+      var ua = window.navigator.userAgent;
+      var msie = ua.indexOf("MSIE ");
+      if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
+        var html="<p>請按右鍵另存圖片</p>";
+        html+="<img src='"+base64+"' alt='10'/>";
+        var tab=window.open();
+        tab.document.write(html);
+      }
+      else{
+        $('#download').attr('href',base64);
+        $('#download').attr('download',(+ new Date())+'.png');
+        $('#download')[0].click();
+        ga('send', 'event', 'download', 'pic', (+ new Date()));
+      }
+    }
   }
 }
 
