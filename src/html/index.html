@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Homepage</title>
+    <link href="images/favicon.png" rel="shortcut icon">
+    <link href="vender/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet"/>
+    <link href="vender/jquery.ui.core.css" rel="stylesheet"/>
+    <link href="vender/jquery.ui.resizable.css" rel="stylesheet"/>
+    <link href="vender/ie-alert/iealert/style.css" rel="stylesheet"/>
+    <link href="stylesheets/all.css" media="screen" rel="stylesheet" type="text/css"/>
+  </head>
+  <body class="homepage" id="drop">
+<!--    <%= require('html-loader!./header.html') %>-->
+    <div id="content" class="container">
+      <div class="row">
+        <div class="text-center" id="generator">
+          <div id="settings">
+            <div class="col-sm-12 control-box">
+              <h1 class="logo">Cyberpuck 2077 Icon Generator</h1>
+              <a class="uploadBtn">請按此上傳圖片</a><span class="mobile-hide">，或直接將圖片拖曳到頁面中</span><br>我們提供了 5 種樣板，讓您自由選擇<br>您可自由移動、縮放圖片到合適位置和大小<br>完成後，請點擊「下載圖片」按鈕
+            </div>
+            <div class="col-sm-12 control-box">
+              <div id="templates" class="text-center" data-toggle="buttons">
+                <label class="template-label btn btn-default active"
+                       style="background-image: url(images/sample.png);">
+                  <img src="images/object/1.png">
+                  <input type="radio" name="template" value="1" autocomplete="off" checked="checked">
+                </label>
+                <label class="template-label btn btn-default active"
+                       style="background-image: url(images/sample.png);display: none;">
+                  <img src="images/object/2.png">
+                  <input type="radio" name="template" value="2" autocomplete="off">
+                </label>
+                <label class="template-label btn btn-default active"
+                       style="background-image: url(images/sample.png);display: none;">
+                  <img src="images/object/3.png">
+                  <input type="radio" name="template" value="3" autocomplete="off">
+                </label>
+
+                <label class="template-label btn btn-default active"
+                       style="background-image: url(images/sample.png);display: none;">
+                  <img src="images/object/4.png">
+                  <input type="radio" name="template" value="4" autocomplete="off">
+                </label>
+                <label class="template-label btn btn-default active"
+                       style="background-image: url(images/sample.png);display: none;">
+                  <img src="images/object/5.png">
+                  <input type="radio" name="template" value="5" autocomplete="off">
+                </label>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="col-sm-12 control-box" style="height:inherit">
+
+          <div class="preview">
+            <div id="userimage">
+              <div class="inner" style="background-image: url(images/sample.png)"></div>
+              <div id="size-slider"><span class="zoomin">＋</span><span class="zoomout">－</span></div>
+            </div>
+            <div id="coverimage">
+              <div class="inner" style="background-image: url(images/object/1.png)"></div>
+              <div id="dragger"></div>
+            </div>
+            <div id="loading">
+              <div class="drop"><img src="images/loading.gif"></div>
+            </div>
+
+          </div><!-- preview end -->
+
+          <div id="formbuttons" class="control-box text-center">
+            <button href="#" id="normalSubmit">下載圖片</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="copyright" class="text-center">
+      <a href="https://github.com/fripig/twstreet" target="_blank">Github 原始碼</a>,
+      <a href="https://zh.wikipedia.org/wiki/File:PD-2006-06-23-台北市博愛路街照.jpg">預設圖片來源：WIKI</a>,
+      fork from <a href="https://github.com/yhsiang/10" target="_blank">支持邱顯智 10 號頭像產生器</a>.
+    </div>
+
+    <img src="images/sample.png" id="loadimage" class="hidden">
+    <form action='#' onsubmit="return false;">
+      <input type="file" name="Filedata" id="uploadInput">
+      <div id="uploading">圖片讀取中，請稍後</div>
+    </form>
+    <input type="hidden" value="" name="source" id="source">
+    <canvas id="canvas" class="hide"></canvas>
+    <canvas id="thumb" class="hide"></canvas>
+    <canvas id="result" class="hide"></canvas>
+    <a id="download" class="hide" download="10.png">Download</a>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <script src="vender/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="vender/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <script src="vender/jquery.ui.rotatable.min.js" type="text/javascript"></script>
+    <script src="vender/ie-alert/iealert.min.js" type="text/javascript"></script>
+    <script src="vender/konami.js" type="text/javascript"></script>
+    <script src="javascript/all.js" type="text/javascript"></script>
+  </body>
+</html>

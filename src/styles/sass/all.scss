@@ -1,0 +1,44 @@
+@import "compass";
+@import "susy";
+
+// helper
+@import "src/styles/sass/helper/form";
+@import "src/styles/sass/helper/global";
+
+// config
+@import "src/styles/sass/config/color";
+@import "src/styles/sass/config/susy";
+@import "src/styles/sass/config/typography";
+@import "src/styles/sass/config/global";
+
+// core
+@import "src/styles/sass/core/typography";
+@import "src/styles/sass/core/global";
+
+// partial
+@import "src/styles/sass/partials/bootstrap";
+@import "src/styles/sass/partials/button";
+@import "src/styles/sass/partials/corner";
+@import "src/styles/sass/partials/generator";
+@import "src/styles/sass/partials/gototop";
+@import "src/styles/sass/partials/mobile";
+@import "src/styles/sass/partials/preview";
+@import "src/styles/sass/partials/social-object";
+@import "src/styles/sass/partials/rotate";
+@import "src/styles/sass/partials/upload";
+
+#formbuttons {
+  margin-top: 6em;
+}
+
+#normalSubmit {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border-bottom: 2px solid white;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.3;
+}

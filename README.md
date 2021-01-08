@@ -1,14 +1,49 @@
-# 台灣街景封面產生器
+# Webpack jQuery Starter
 
-## Demo
+## Description
 
-[這裡](http://twstreet.spotlights.news)
+This is a basic webpack jQuery starter with Bootstrap, FontAwesome and Sass
 
+## Install
 
-## 簡介
+Some basic Git commands are:
 
-本產生器參考[支持邱顯智 10 號頭像產生器](https://github.com/yhsiang/10) 開發
+```
+$ git clone https://github.com/mohamedsamara/webpack-jquery-starter.git
+$ cd project
+$ npm install
+```
 
-## 授權
+## Start
 
-專案採用 [BSD 授權](LICENSE)
+```
+$ npm start
+```
+
+## Simple build for production
+
+```
+$ npm run build
+```
+
+## Run the application for production
+
+```
+$ npm run serve
+```
+
+## Languages & tools
+
+- [Webpack](https://webpack.js.org/)
+
+- [jQuery](https://jquery.com/)
+
+- [Sass](https://sass-lang.com/)
+
+- [Bootstrap](https://getbootstrap.com/)
+
+- [FontAwesome](https://fontawesome.com/)
+
+- [PostCSS](https://postcss.org/)
+
+- [ESLint](https://eslint.org/)
