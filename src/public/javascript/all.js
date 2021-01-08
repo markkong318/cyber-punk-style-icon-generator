@@ -24,7 +24,7 @@ $(document).ready(function () {
 
   // dragger
   $dragger.draggable({
-    drag: function (event) {
+    drag: function () {
       $userimage.css('background-position', $dragger.css('left') + ' ' + $dragger.css('top'));
       if ($userimage.hasClass('dragged') == false) $userimage.addClass('dragged');
       var value = $('input[name=template]:checked').val();
@@ -63,10 +63,8 @@ $(document).ready(function () {
 
   // change template
   $('body').delegate('input[name=template]', 'change', function () {
-    var
-      width,
-      value = $(this).val(),
-      url = 'images/object/' + value + '.png';
+    var value = $(this).val();
+    var url = 'images/object/' + value + '.png';
 
     $coverimage.css('background-image', 'url(' + url + ')');
     if ($userimage.hasClass('dragged') == true) $userimage.attr('class', 'inner dragged');
@@ -106,16 +104,16 @@ $(window).konami({
 $(window).konami({
   code: [54, 54, 54],
   cheat: function () {
-    $('h1,#size-slider').delay(100).animate({ 'opacity': '0' }, 2900)
-    $('#formbuttons,.template-label').delay(400).animate({ 'opacity': '0' }, 2600)
-    $('#settings').delay(1000).animate({ 'opacity': '0' }, 2000)
-    $('.left-bottom-corner').delay(800).animate({ 'opacity': '0' }, 2200)
+    $('h1,#size-slider').delay(100).animate({ 'opacity': '0' }, 2900);
+    $('#formbuttons,.template-label').delay(400).animate({ 'opacity': '0' }, 2600);
+    $('#settings').delay(1000).animate({ 'opacity': '0' }, 2000);
+    $('.left-bottom-corner').delay(800).animate({ 'opacity': '0' }, 2200);
     $('.preview').animate({ 'top': '-500px', 'opacity': '0.5' }, 3000).animate({
       'width': '0',
       'opacity': '0'
     }, 3000, function () {
       $('#content').slideUp();
-    })
+    });
   }
 });
 
@@ -168,7 +166,7 @@ function createImage(template, source, x, y, w, h) {
       // check ie or not
       var ua = window.navigator.userAgent;
       var msie = ua.indexOf("MSIE ");
-      if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+      if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./)) {
         var html = "<p>請按右鍵另存圖片</p>";
         html += "<img src='" + base64 + "' alt='10'/>";
         var tab = window.open();
@@ -177,10 +175,9 @@ function createImage(template, source, x, y, w, h) {
         $('#download').attr('href', base64);
         $('#download').attr('download', (+new Date()) + '.png');
         $('#download')[0].click();
-        ga('send', 'event', 'download', 'pic', (+new Date()));
       }
-    }
-  }
+    };
+  };
 }
 
 //uploader
@@ -193,7 +190,7 @@ $(function () {
     $('#uploadInput').click();
   });
   $('#uploadInput').on('change', function () {
-    input = document.getElementById('uploadInput');
+    const input = document.getElementById('uploadInput');
     loadImage(input.files);
   });
 });
@@ -254,7 +251,8 @@ function loadImage(files) {
     }
     thumb.width = thumb_w;
     thumb.height = thumb_h;
-    var ctx = thumb.getContext("2d");
+
+    ctx = thumb.getContext("2d");
     ctx.drawImage(img, 0, 0, thumb_w, thumb_h);
     var thumbbase64 = thumb.toDataURL("image/png");
     $('#templates label').css('background-image', 'url(' + thumbbase64 + ')');
@@ -284,9 +282,8 @@ function getBackgroundImage(element) {
   return url.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
 }
 
-function resizeDragger(size, wrapper, value, upload) {
+function resizeDragger(size, wrapper, value) {
   value = typeof value !== 'undefined' ? value : 1;
-  upload = typeof upload !== 'undefined' ? upload : 0;
 
   var scale, width, height, top, left;
   if (size[0] > size[1]) {
@@ -343,17 +340,17 @@ function resizeDragger(size, wrapper, value, upload) {
 }
 
 function getBackgroundSize(string) {
-  size = string.split(' ');
+  const size = string.split(' ');
   return [px2int(size[0]), px2int(size[1])];
 }
 
 function getBackgroundPosition(string) {
-  position = string.split(' ');
+  const position = string.split(' ');
   return [px2int(position[0]), px2int(position[1])];
 }
 
 function getBackgroundCenterPoint(size, position) {
-  return [size[0] * 0.5 + position[0], size[1] * 0.5 + position[1]]
+  return [size[0] * 0.5 + position[0], size[1] * 0.5 + position[1]];
 }
 
 function px2int(string) {
