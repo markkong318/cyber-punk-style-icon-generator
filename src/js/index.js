@@ -13,6 +13,8 @@ import '../vendor/jquery.ui.resizable.css';
 import '../vendor/ie-alert/iealert/style.css';
 import '../styles/all.css';
 
+import './index.window';
+import './index.normal-submit';
 
 // Import application sass styles
 // import "../styles/sass/all.scss";
@@ -26,9 +28,6 @@ import '../styles/all.css';
 //   navigation();
 // });
 
-
-
-
 var $userimage = $('#userimage .inner');
 var $coverimage = $('#coverimage .inner');
 var $dragger = $('#dragger');
@@ -41,6 +40,7 @@ $(window).on('load', function () {
   var userimage_size = getImgSize(getBackgroundImage($userimage));
   resizeDragger(userimage_size, container_size);
 });
+
 $(document).ready(function () {
   // ie alert
   $("body").iealert({
@@ -68,18 +68,16 @@ $(document).ready(function () {
     max: 170,
     min: 30,
     slide: function (event, ui) {
-      var
-        truesize = getBackgroundSize($userimage.css('background-size')),
-        position = getBackgroundPosition($userimage.css('background-position')),
-        center = getBackgroundCenterPoint(truesize, position);
+      var truesize = getBackgroundSize($userimage.css('background-size'));
+      var position = getBackgroundPosition($userimage.css('background-position'));
+      var center = getBackgroundCenterPoint(truesize, position);
       $('<img/>').attr('src', getBackgroundImage($userimage))
         .on ('load', function () {
-          var
-            size = [this.width, this.height],
-            width = size[0] * (ui.value) / 100,
-            height = size[1] * (ui.value) / 100,
-            left = center[0] - width * 0.5,
-            top = center[1] - height * 0.5;
+          var size = [this.width, this.height];
+          var width = size[0] * (ui.value) / 100;
+          var height = size[1] * (ui.value) / 100;
+          var left = center[0] - width * 0.5;
+          var top = center[1] - height * 0.5;
           $dragger
             .css('width', width + 'px').css('height', height + 'px')
             .css('top', top + 'px').css('left', left + 'px');
@@ -97,7 +95,7 @@ $(document).ready(function () {
     var url = 'images/object/' + value + '.png';
 
     $coverimage.css('background-image', 'url(' + url + ')');
-    if ($userimage.hasClass('dragged') == true) $userimage.attr('class', 'inner dragged');
+    if ($userimage.hasClass('dragged') === true) $userimage.attr('class', 'inner dragged');
     else $userimage.attr('class', 'inner');
 
     $('<img/>').attr('src', getBackgroundImage($userimage))
@@ -109,106 +107,71 @@ $(document).ready(function () {
       });
   });
 
-  $("#normalSubmit").click(function () {
-    var basesize = $userimage.width();
-    var size = getBackgroundSize($userimage.css('background-size'));
-    var position = getBackgroundPosition($userimage.css('background-position'));
-    var scale = basesize / 500;
-
-    var template = $('input[name=template]:checked').val();
-    var source = $('#source').val();
-    var w = size[0] / scale;
-    var h = size[1] / scale;
-    var x = position[0] / scale;
-    var y = position[1] / scale;
-
-    createImage(template, source, x, y, w, h);
-  });
-});
-$(window).konami({
-  code: [55, 55, 55],
-  cheat: function () {
-    $('.banana').slideDown();
-  }
-});
-$(window).konami({
-  code: [54, 54, 54],
-  cheat: function () {
-    $('h1,#size-slider').delay(100).animate({ 'opacity': '0' }, 2900);
-    $('#formbuttons,.template-label').delay(400).animate({ 'opacity': '0' }, 2600);
-    $('#settings').delay(1000).animate({ 'opacity': '0' }, 2000);
-    $('.left-bottom-corner').delay(800).animate({ 'opacity': '0' }, 2200);
-    $('.preview').animate({ 'top': '-500px', 'opacity': '0.5' }, 3000).animate({
-      'width': '0',
-      'opacity': '0'
-    }, 3000, function () {
-      $('#content').slideUp();
-    });
-  }
+  // $("#normalSubmit").click(function () {
+  //   const baseSize = $userimage.width();
+  //   const size = getBackgroundSize($userimage.css('background-size'));
+  //   const position = getBackgroundPosition($userimage.css('background-position'));
+  //   const scale = baseSize / 500;
+  //
+  //   const template = $('input[name=template]:checked').val();
+  //   const source = $('#source').val();
+  //   const w = size[0] / scale;
+  //   const h = size[1] / scale;
+  //   const x = position[0] / scale;
+  //   const y = position[1] / scale;
+  //
+  //   createImage(template, source, x, y, w, h);
+  // });
 });
 
-function rgbSplit(imageData, options) {
-  const { rOffset = 0, gOffset = 0, bOffset = 0 } = options;
-
-  const originalArray = imageData.data;
-  const newArray = new Uint8ClampedArray(originalArray);
-
-  for (let i = 0; i < originalArray.length; i += 4) {
-    newArray[i + 0 + rOffset * 4] = originalArray[i + 0]; // 🔴
-    newArray[i + 1 + gOffset * 4] = originalArray[i + 1]; // 🟢
-    newArray[i + 2 + bOffset * 4] = originalArray[i + 2]; // 🔵
-  }
-
-  return new ImageData(newArray, imageData.width, imageData.height);
-}
-
-function createImage(template, source, x, y, w, h) {
-  var cover = new Image();
-  cover.src = 'images/object/' + template + '.png';
-
-  cover.onload = function () {
-    var userimage = new Image();
-    userimage.src = source;
-
-    userimage.onload = function () {
-      var resize_canvas = document.getElementById("result");
-      resize_canvas.width = 500;
-      resize_canvas.height = 500;
-
-      var ctx = resize_canvas.getContext("2d");
-      ctx.rect(0, 0, 500, 500);
-      ctx.fillStyle = "#CCCCCC";
-      ctx.fill();
-      ctx.drawImage(userimage, x, y, w, h);
-
-      const imageData = ctx.getImageData(0, 0, 500, 500);
-      const updatedImageData = rgbSplit(imageData, {
-        rOffset: 20,
-        gOffset: -10,
-        bOffset: 10
-      });
-      ctx.putImageData(updatedImageData, 0, 0);
-
-      ctx.drawImage(cover, 0, 0, 500, 500);
-
-      var base64 = resize_canvas.toDataURL("image/png");
-
-      // check ie or not
-      var ua = window.navigator.userAgent;
-      var msie = ua.indexOf("MSIE ");
-      if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./)) {
-        var html = "<p>請按右鍵另存圖片</p>";
-        html += "<img src='" + base64 + "' alt='10'/>";
-        var tab = window.open();
-        tab.document.write(html);
-      } else {
-        $('#download').attr('href', base64);
-        $('#download').attr('download', (+new Date()) + '.png');
-        $('#download')[0].click();
-      }
-    };
-  };
-}
+// const createImage = async(template, source, x, y, w, h) => {
+//   const renderWidth = 600;
+//   const renderHeight = 600;
+//
+//   const sourceImage = await loadImages(source);
+//
+//   // const resizeCanvas = document.getElementById("result");
+//   // resizeCanvas.width = 500;
+//   // resizeCanvas.height = 500;
+//
+//   const renderCanvas = document.createElement('canvas');
+//   renderCanvas.width = renderWidth;
+//   renderCanvas.height = renderHeight;
+//
+//   const ctx = renderCanvas.getContext("2d");
+//   ctx.rect(0, 0, ctx.canvas.width, ctx.canvas.height);
+//   ctx.fillStyle = "#CCCCCC";
+//   ctx.fill();
+//   ctx.drawImage(sourceImage, x, y, w, h);
+//
+//   const imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+//   const updatedImageData = rgbSplit.filter(imageData, {
+//     rOffset: 20,
+//     gOffset: -10,
+//     bOffset: 10
+//   });
+//
+//   ctx.putImageData(updatedImageData, 0, 0);
+//
+//   const cover = await loadImages('images/object/' + template + '.png');
+//   ctx.drawImage(cover, (ctx.canvas.width - cover.width) / 2, (ctx.canvas.height - cover.height) / 2, cover.width, cover.height);
+//
+//   const base64 = renderCanvas.toDataURL("image/png");
+//
+//   // check ie or not
+//   const ua = window.navigator.userAgent;
+//   const msie = ua.indexOf("MSIE ");
+//   if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./)) {
+//     var html = "<p>請按右鍵另存圖片</p>";
+//     html += "<img src='" + base64 + "' alt='10'/>";
+//     var tab = window.open();
+//     tab.document.write(html);
+//   } else {
+//     $('#download').attr('href', base64);
+//     $('#download').attr('download', (+new Date()) + '.png');
+//     $('#download')[0].click();
+//   }
+// };
 
 //uploader
 $(function () {
