@@ -39,7 +39,7 @@ class Graphic {
   }
 
   toDataURL() {
-    return this.canvas.toDataURL();
+    return this.canvas.toDataURL('image/png');
   }
 }
 

@@ -1,5 +1,9 @@
 import loadImages from "image-promise";
-import rgbSplit from "./filter/rgb-split";
+import GraphicCropAction from "./image/action/graphic-crop-action";
+import GraphicFillAction from "./image/action/graphic-fill-action";
+import RgbSplitAction from "./image/action/rgb-split-action";
+import ImageDrawAction from "./image/action/image-draw-action";
+import Graphic from "./image/graphic";
 
 $(document).ready(function () {
   const $userimage = $('#userimage .inner');
@@ -22,38 +26,36 @@ $(document).ready(function () {
 });
 
 const createImage = async(template, source, x, y, w, h) => {
-  const renderWidth = 600;
-  const renderHeight = 600;
+  const graphic = Graphic.create(600, 600);
 
   const sourceImage = await loadImages(source);
+  const coverImage = await loadImages('images/object/' + template + '.png');
 
-  // const resizeCanvas = document.getElementById("result");
-  // resizeCanvas.width = 500;
-  // resizeCanvas.height = 500;
-
-  const renderCanvas = document.createElement('canvas');
-  renderCanvas.width = renderWidth;
-  renderCanvas.height = renderHeight;
-
-  const ctx = renderCanvas.getContext("2d");
-  ctx.rect(0, 0, ctx.canvas.width, ctx.canvas.height);
-  ctx.fillStyle = "#CCCCCC";
-  ctx.fill();
-  ctx.drawImage(sourceImage, x, y, w, h);
-
-  const imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-  const updatedImageData = rgbSplit.filter(imageData, {
-    rOffset: 20,
-    gOffset: -10,
-    bOffset: 10
+  GraphicFillAction.apply(graphic, {
+    color: '#000000',
   });
 
-  ctx.putImageData(updatedImageData, 0, 0);
+  ImageDrawAction.apply(graphic,{
+    image: sourceImage,
+    x,
+    y,
+    width: w,
+    height: h,
+  });
 
-  const cover = await loadImages('images/object/' + template + '.png');
-  ctx.drawImage(cover, (ctx.canvas.width - cover.width) / 2, (ctx.canvas.height - cover.height) / 2, cover.width, cover.height);
+  RgbSplitAction.apply(graphic, {
+    rOffset: 20,
+    gOffset: -10,
+    bOffset: 10,
+  });
 
-  const base64 = renderCanvas.toDataURL("image/png");
+  GraphicCropAction.apply(graphic, {
+    size: 100,
+  });
+
+  ImageDrawAction.apply(graphic,{ image: coverImage });
+
+  const base64 = graphic.toDataURL();
 
   const ua = window.navigator.userAgent;
   const msie = ua.indexOf("MSIE ");
