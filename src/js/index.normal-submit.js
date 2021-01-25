@@ -5,6 +5,9 @@ import RgbSplitAction from "./image/action/rgb-split-action";
 import ImageDrawAction from "./image/action/image-draw-action";
 import Graphic from "./image/graphic";
 
+import getBackgroundSize from "./util/get-background-size";
+import getBackgroundPosition from "./util/get-background-position";
+
 $(document).ready(function () {
   const $userimage = $('#userimage .inner');
 
@@ -37,8 +40,8 @@ const createImage = async(template, source, x, y, w, h) => {
 
   ImageDrawAction.apply(graphic,{
     image: sourceImage,
-    x,
-    y,
+    x: x + 50,
+    y: y + 50,
     width: w,
     height: h,
   });
@@ -72,17 +75,3 @@ const createImage = async(template, source, x, y, w, h) => {
     $('#download')[0].click();
   }
 };
-
-function getBackgroundSize(string) {
-  const size = string.split(' ');
-  return [px2int(size[0]), px2int(size[1])];
-}
-
-function getBackgroundPosition(string) {
-  const position = string.split(' ');
-  return [px2int(position[0]), px2int(position[1])];
-}
-
-function px2int(string) {
-  return parseFloat(string.replace('px', ''));
-}

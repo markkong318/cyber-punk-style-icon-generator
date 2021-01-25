@@ -1,3 +1,15 @@
+import resizeDragger from "./util/resize-dragger";
+import getImgSize from "./util/get-img-size";
+import getBackgroundImage from "./util/get-background-image";
+
+$(window).on('load', function () {
+  var $userImage = $('#userimage .inner');
+
+  const container_size = $userImage.width();
+  const userimage_size = getImgSize(getBackgroundImage($userImage));
+  resizeDragger(userimage_size, container_size);
+});
+
 $(window).konami({
   code: [55, 55, 55],
   cheat: function () {
@@ -20,3 +32,4 @@ $(window).konami({
     });
   }
 });
+
