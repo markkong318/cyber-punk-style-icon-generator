@@ -1,5 +1,5 @@
 
-class ImageDrawAction {
+class DrawImageAction {
   static apply(graphic, options) {
     const context = graphic.getContext();
 
@@ -17,4 +17,4 @@ class ImageDrawAction {
   }
 }
 
-export default ImageDrawAction;
+export default DrawImageAction;

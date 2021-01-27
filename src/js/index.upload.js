@@ -1,8 +1,10 @@
 import resizeDragger from "./util/resize-dragger";
 
-var $userimage = $('#userimage .inner');
-var $loading = $('#loading');
-var $uploading = $('#uploading');
+import {
+  $userImage,
+  $loading,
+  $uploading,
+} from "./util/el";
 
 $(function () {
   var dropZone = document.getElementById('drop');
@@ -61,7 +63,7 @@ function loadImage(files) {
     var base64 = canvas.toDataURL("image/png");
 
     $('#source').attr('value', base64);
-    $userimage.css('background-image', 'url(' + base64 + ')');
+    $userImage.css('background-image', 'url(' + base64 + ')');
 
     var thumb = document.getElementById("thumb");
     var thumb_w, thumb_h;
@@ -84,7 +86,7 @@ function loadImage(files) {
       .on('load', function () {
         var
           value = $('input[name=template]:checked').val(),
-          container_size = $userimage.width(),
+          container_size = $userImage.width(),
           userimage_size = [this.width, this.height];
         resizeDragger(userimage_size, container_size, value);
 

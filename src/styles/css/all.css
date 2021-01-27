@@ -1,11 +1,6 @@
-/* line 61, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
-* html {
-  font-size: 100%;
-}
-
-/* line 64, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 106, ../../../../../../.rvm/gems/ruby-2.7.1/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
-  font-size: 16px;
+  font-size: 100%;
   line-height: 1.5em;
 }
 
@@ -71,51 +66,57 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  background-color: #DF6934;
-  color: rgba(255, 255, 255, 0.8);
+  background-color: #fcee0a;
+  color: #000;
   font-size: 16px;
+  font-family: Blender Pro;
   line-height: 24px;
   padding: 20px 0;
 }
 
-/* line 16, ../sass/core/_global.scss */
-a {
-  color: white;
-  text-decoration: none;
-  border-bottom: 1px solid white;
-}
-/* line 24, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-a:hover {
-  color: white;
+/* line 17, ../sass/core/_global.scss */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Blender Pro;
 }
 
 /* line 21, ../sass/core/_global.scss */
+a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+}
+/* line 24, ../../../../../../.rvm/gems/ruby-2.7.1/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:hover {
+  color: #999;
+}
+
+/* line 26, ../sass/core/_global.scss */
 a:hover {
   text-decoration: none;
 }
 
-/* line 28, ../sass/core/_global.scss */
+/* line 32, ../sass/core/_global.scss */
 #content {
   position: relative;
   height: auto;
   margin-top: 30px;
 }
 @media (min-width: 768px) {
-  /* line 28, ../sass/core/_global.scss */
+  /* line 32, ../sass/core/_global.scss */
   #content {
     height: inherit;
   }
 }
-/* line 91, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/susy-1.0.9/sass/susy/_media.scss */
+/* line 87, ../../../../../../.rvm/gems/ruby-2.7.1/gems/susy-2.2.14/sass/susy/language/susyone/_media.scss */
 .lte-ie9 #content {
   height: inherit;
 }
 
-/* line 37, ../sass/core/_global.scss */
+/* line 41, ../sass/core/_global.scss */
 #footer {
   margin: 2.25em auto;
 }
-/* line 39, ../sass/core/_global.scss */
+/* line 43, ../sass/core/_global.scss */
 #footer p {
   font-size: 14px;
   line-height: 1;
@@ -124,10 +125,10 @@ a:hover {
 /* line 2, ../sass/partials/_bootstrap.scss */
 .navbar {
   border-width: 0;
-  background-color: #00acb3;
+  background-color: #00ACB3;
   border-bottom: 1px solid #00858a;
-  -webkit-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
   -moz-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
+  -webkit-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
   color: #ffffff;
   font-family: arial,sans-serif;
@@ -140,7 +141,7 @@ a:hover {
   cursor: pointer;
   font-weight: bold;
 }
-/* line 18, ../sass/partials/_bootstrap.scss */
+/* line 17, ../sass/partials/_bootstrap.scss */
 .navbar li > a,
 .navbar .navbar-toggle {
   color: #efefef;
@@ -149,7 +150,7 @@ a:hover {
 .navbar li > a.btn {
   color: #666666;
 }
-/* line 25, ../sass/partials/_bootstrap.scss */
+/* line 24, ../sass/partials/_bootstrap.scss */
 .navbar .dropdown-menu li a,
 .navbar .dropdown-menu li a:hover {
   color: white;
@@ -162,7 +163,7 @@ a:hover {
 .navbar .dropdown-menu .divider {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 38, ../sass/partials/_bootstrap.scss */
+/* line 34, ../sass/partials/_bootstrap.scss */
 .navbar li > a:hover,
 .navbar li > a:focus,
 .navbar .open, .navbar .open > a,
@@ -173,7 +174,7 @@ a:hover {
 }
 /* line 42, ../sass/partials/_bootstrap.scss */
 .navbar .logo {
-  color: #fffffe;
+  color: #FFFFFE;
   font-size: 20px;
   font-weight: 700;
 }
@@ -185,23 +186,23 @@ a:hover {
 .navbar .navbar-toggle .icon-bar {
   background-color: #fff;
 }
-/* line 54, ../sass/partials/_bootstrap.scss */
+/* line 53, ../sass/partials/_bootstrap.scss */
 .navbar .nav .caret,
 .navbar .nav a:hover .caret {
-  border-top-color: #fffffe;
-  border-bottom-color: #fffffe;
+  border-top-color: #FFFFFE;
+  border-bottom-color: #FFFFFE;
 }
-/* line 60, ../sass/partials/_bootstrap.scss */
+/* line 58, ../sass/partials/_bootstrap.scss */
 .navbar .nav .open > a .caret,
 .navbar .nav .open > a:hover .caret,
 .navbar .nav .open > a:focus .caret {
-  border-top-color: #fffffe;
-  border-bottom-color: #fffffe;
+  border-top-color: #FFFFFE;
+  border-bottom-color: #FFFFFE;
 }
 @media (min-width: 768px) {
   /* line 66, ../sass/partials/_bootstrap.scss */
   .navbar .dropdown-menu li a {
-    color: #00acb3;
+    color: #00ACB3;
   }
   /* line 69, ../sass/partials/_bootstrap.scss */
   .navbar .dropdown-menu .divider {
@@ -214,7 +215,7 @@ a:hover {
 }
 /* line 66, ../sass/partials/_bootstrap.scss */
 .lte-ie9 .navbar .dropdown-menu li a {
-  color: #00acb3;
+  color: #00ACB3;
 }
 /* line 69, ../sass/partials/_bootstrap.scss */
 .lte-ie9 .navbar .dropdown-menu .divider {
@@ -280,8 +281,8 @@ label.checkbox {
 /* line 124, ../sass/partials/_bootstrap.scss */
 .btn-default.active {
   border: 2px solid white;
-  -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
   -moz-box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
@@ -298,38 +299,39 @@ label.checkbox {
 /* line 2, ../sass/partials/_generator.scss */
 #generator h1 {
   font-size: 36px;
-  line-height:36px;
+  line-height: 36px;
   color: #000;
-  margin:0; padding:0;
-  width:  100%;
-  height:65px;
-  display:inline-block;
-  margin:auto auto;
-  margin-bottom:25px;
-  margin-top:20px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 65px;
+  display: inline-block;
+  margin: auto auto;
+  margin-bottom: 25px;
+  margin-top: 20px;
   font-weight: 900;
 }
-/* line 20, ../sass/partials/_generator.scss */
+/* line 15, ../sass/partials/_generator.scss */
 #generator h2 {
   display: none;
 }
-/* line 23, ../sass/partials/_generator.scss */
+/* line 18, ../sass/partials/_generator.scss */
 #generator #settings {
   max-width: 500px;
   margin: 0 auto;
 }
 @media (min-width: 768px) {
-  /* line 28, ../sass/partials/_generator.scss */
+  /* line 23, ../sass/partials/_generator.scss */
   #generator h1 {
     display: block;
   }
 }
-/* line 28, ../sass/partials/_generator.scss */
+/* line 23, ../sass/partials/_generator.scss */
 .lte-ie9 #generator h1 {
   display: block;
 }
 
-/* line 33, ../sass/partials/_generator.scss */
+/* line 28, ../sass/partials/_generator.scss */
 #uploading {
   position: fixed;
   bottom: 0;
@@ -343,7 +345,7 @@ label.checkbox {
   z-index: 99999;
 }
 
-/* line 45, ../sass/partials/_generator.scss */
+/* line 40, ../sass/partials/_generator.scss */
 #generating {
   position: fixed;
   bottom: 0;
@@ -357,7 +359,7 @@ label.checkbox {
   z-index: 99999;
 }
 
-/* line 58, ../sass/partials/_generator.scss */
+/* line 53, ../sass/partials/_generator.scss */
 #templates .btn {
   margin: 2px 1px;
   padding: 0;
@@ -365,17 +367,17 @@ label.checkbox {
   background-position: center;
   width: 18%;
 }
-/* line 65, ../sass/partials/_generator.scss */
+/* line 60, ../sass/partials/_generator.scss */
 #templates img {
   width: 100%;
 }
 
-/* line 70, ../sass/partials/_generator.scss */
+/* line 65, ../sass/partials/_generator.scss */
 .control-box {
   margin: 3em 0;
 }
 
-/* line 74, ../sass/partials/_generator.scss */
+/* line 69, ../sass/partials/_generator.scss */
 .banana {
   display: none;
 }
@@ -389,7 +391,7 @@ label.checkbox {
   height: 50px;
   z-index: 100000;
   cursor: pointer;
-  background: #00acb3;
+  background: #00ACB3;
   color: #FFFFFF;
   text-align: center;
   font-size: 30px;
@@ -419,8 +421,8 @@ label.checkbox {
   -moz-border-radius-topright: 10px;
   -webkit-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
   box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
   z-index: 99999;
 }
@@ -434,7 +436,7 @@ label.checkbox {
     display: none;
   }
 }
-/* line 91, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/susy-1.0.9/sass/susy/_media.scss */
+/* line 87, ../../../../../../.rvm/gems/ruby-2.7.1/gems/susy-2.2.14/sass/susy/language/susyone/_media.scss */
 .lte-ie9 #show {
   display: none;
 }
@@ -449,7 +451,7 @@ label.checkbox {
     display: initial;
   }
 }
-/* line 91, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/susy-1.0.9/sass/susy/_media.scss */
+/* line 87, ../../../../../../.rvm/gems/ruby-2.7.1/gems/susy-2.2.14/sass/susy/language/susyone/_media.scss */
 .lte-ie9 .mobile-hide {
   display: initial;
 }
@@ -468,7 +470,7 @@ label.checkbox {
   display: block;
   padding-top: 100%;
 }
-/* line 26, ../sass/partials/_preview.scss */
+/* line 25, ../sass/partials/_preview.scss */
 .preview #userimage,
 .preview #coverimage {
   width: 100%;
@@ -513,10 +515,8 @@ label.checkbox {
 }
 /* line 67, ../sass/partials/_preview.scss */
 .preview #size-slider.ui-widget-content {
-  -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
+  -webkit-border-radius: 0px;
   border-radius: 0px;
   height: 1px;
 }
@@ -530,27 +530,23 @@ label.checkbox {
   width: 110%;
   height: 40px;
   background: white;
-  -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  -webkit-border-radius: 20px;
   border-radius: 20px;
   margin-left: -5%;
 }
-/* line 86, ../sass/partials/_preview.scss */
+/* line 84, ../sass/partials/_preview.scss */
 .preview #size-slider .ui-state-default,
 .preview #size-slider .ui-widget-content .ui-state-default,
 .preview #size-slider .ui-widget-header .ui-state-default {
   outline: none;
   width: 30px;
   height: 30px;
-  background: #00acb3;
+  background: #00ACB3;
   opacity: 1;
   border: 0px solid transparent;
-  -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
+  -webkit-border-radius: 15px;
   border-radius: 15px;
   cursor: pointer;
 }
@@ -561,14 +557,14 @@ label.checkbox {
 }
 /* line 100, ../sass/partials/_preview.scss */
 .preview #size-slider .zoomin {
-  color: #00acb3;
+  color: #00ACB3;
   position: absolute;
   top: -15px;
   right: -17px;
 }
 /* line 106, ../sass/partials/_preview.scss */
 .preview #size-slider .zoomout {
-  color: #00acb3;
+  color: #00ACB3;
   position: absolute;
   top: -15px;
   left: -17px;
@@ -602,52 +598,6 @@ label.checkbox {
   left: 50%;
   margin-top: -5px;
   margin-left: -21px;
-}
-
-/* line 1, ../sass/partials/_social-object.scss */
-.likebtn {
-  position: relative;
-  width: 100%;
-  height: 20px;
-  text-align: center;
-  margin: auto auto;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-/* line 10, ../sass/partials/_social-object.scss */
-.fbcomment {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  margin: auto auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-/* line 18, ../sass/partials/_social-object.scss */
-.fbcomment h3 {
-  width: 144px;
-  height: 37px;
-  display: block;
-  margin: 0;
-  padding: 0;
-  font-size: 1px;
-  text-indent: -9999px;
-  margin: auto auto;
-  background: url(../images/feedbacktitle.png) no-repeat;
-  margin-bottom: 10px;
-}
-
-/* line 31, ../sass/partials/_social-object.scss */
-.plzlike {
-  position: relative;
-  width: 100%;
-  font-size: 12px;
-  color: #399;
-  text-align: center;
-  margin: 10px auto;
-  display: none;
 }
 
 /* line 1, ../sass/partials/_rotate.scss */
@@ -717,43 +667,40 @@ label.checkbox {
   visibility: hidden;
 }
 
-/* line 56, ../sass/partials/_rotate.scss */
+/* line 53, ../sass/partials/_rotate.scss */
 .ui-resizable-ne,
 .ui-resizable-nw,
 .ui-resizable-se,
 .ui-resizable-sw {
   width: 24px;
   height: 24px;
-  -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
+  -webkit-border-radius: 12px;
   border-radius: 12px;
   background: rgba(245, 220, 88, 0.5);
 }
 @media (min-width: 1024px) {
-  /* line 56, ../sass/partials/_rotate.scss */
+  /* line 53, ../sass/partials/_rotate.scss */
   .ui-resizable-ne,
   .ui-resizable-nw,
   .ui-resizable-se,
   .ui-resizable-sw {
     width: 12px;
     height: 12px;
-    -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
-    -ms-border-radius: 0px;
-    -o-border-radius: 0px;
+    -webkit-border-radius: 0px;
     border-radius: 0px;
   }
 }
-/* line 91, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_extensions/susy-1.0.9/sass/susy/_media.scss */
+/* line 87, ../../../../../../.rvm/gems/ruby-2.7.1/gems/susy-2.2.14/sass/susy/language/susyone/_media.scss */
 .lte-ie9 .ui-resizable-ne, .lte-ie9
 .ui-resizable-nw, .lte-ie9
 .ui-resizable-se, .lte-ie9
 .ui-resizable-sw {
   width: 12px;
   height: 12px;
-  -ms-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
   border-radius: 0px;
 }
 
@@ -767,18 +714,17 @@ input#uploadInput {
   display: none;
 }
 
-/* line 30, ../sass/all.scss */
+/* line 29, ../sass/all.scss */
 #formbuttons {
   margin-top: 6em;
 }
 
-/* line 34, ../sass/all.scss */
+/* line 33, ../sass/all.scss */
 #normalSubmit {
   padding: 0;
   margin: 0;
   border: none;
   background-color: transparent;
-  color: white;
   border-bottom: 2px solid white;
   font-size: 24px;
   font-weight: normal;

@@ -1,6 +1,6 @@
 import Graphic from "../graphic";
 
-class GraphicCropAction {
+class CropGraphicAction {
   static apply(graphic, options) {
     const context = graphic.getContext();
     const canvas = graphic.getCanvas();
@@ -23,4 +23,4 @@ class GraphicCropAction {
   }
 }
 
-export default GraphicCropAction;
+export default CropGraphicAction;

@@ -1,20 +1,23 @@
 import loadImages from "image-promise";
-import GraphicCropAction from "./image/action/graphic-crop-action";
-import GraphicFillAction from "./image/action/graphic-fill-action";
-import RgbSplitAction from "./image/action/rgb-split-action";
-import ImageDrawAction from "./image/action/image-draw-action";
+import CropGraphicAction from "./image/action/crop-graphic-action";
+import GraphicFillAction from "./image/action/fill-graphic-action";
+import SplitRgbAction from "./image/action/split-rgb-action";
+import DrawImageAction from "./image/action/draw-image-action";
+import ShiftXAction from "./image/action/shift-x-action";
 import Graphic from "./image/graphic";
-
 import getBackgroundSize from "./util/get-background-size";
 import getBackgroundPosition from "./util/get-background-position";
+import {
+  $userImage,
+  $normalSubmit,
+  $download,
+} from "./util/el";
 
 $(document).ready(function () {
-  const $userimage = $('#userimage .inner');
-
-  $("#normalSubmit").click(function () {
-    const baseSize = $userimage.width();
-    const size = getBackgroundSize($userimage.css('background-size'));
-    const position = getBackgroundPosition($userimage.css('background-position'));
+  $normalSubmit.click(function () {
+    const baseSize = $userImage.width();
+    const size = getBackgroundSize($userImage.css('background-size'));
+    const position = getBackgroundPosition($userImage.css('background-position'));
     const scale = baseSize / 500;
 
     const template = $('input[name=template]:checked').val();
@@ -38,7 +41,7 @@ const createImage = async(template, source, x, y, w, h) => {
     color: '#000000',
   });
 
-  ImageDrawAction.apply(graphic,{
+  DrawImageAction.apply(graphic,{
     image: sourceImage,
     x: x + 50,
     y: y + 50,
@@ -46,17 +49,23 @@ const createImage = async(template, source, x, y, w, h) => {
     height: h,
   });
 
-  RgbSplitAction.apply(graphic, {
+  SplitRgbAction.apply(graphic, {
     rOffset: 20,
     gOffset: -10,
     bOffset: 10,
   });
 
-  GraphicCropAction.apply(graphic, {
+  ShiftXAction.apply(graphic, {
+    yStart: 200,
+    yEnd: 250,
+    xOffset: 25,
+  });
+
+  CropGraphicAction.apply(graphic, {
     size: 100,
   });
 
-  ImageDrawAction.apply(graphic,{ image: coverImage });
+  DrawImageAction.apply(graphic,{ image: coverImage });
 
   const base64 = graphic.toDataURL();
 
@@ -70,8 +79,8 @@ const createImage = async(template, source, x, y, w, h) => {
     const tab = window.open();
     tab.document.write(html);
   } else {
-    $('#download').attr('href', base64);
-    $('#download').attr('download', (+new Date()) + '.png');
-    $('#download')[0].click();
+    $download.attr('href', base64);
+    $download.attr('download', (+new Date()) + '.png');
+    $download[0].click();
   }
 };

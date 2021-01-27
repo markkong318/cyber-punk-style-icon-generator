@@ -1,31 +1,30 @@
 @import "compass";
-@import "susy";
+@import "susyone";
 
 // helper
-@import "src/styles/sass/helper/form";
-@import "src/styles/sass/helper/global";
+@import "helper/form";
+@import "helper/global";
 
 // config
-@import "src/styles/sass/config/color";
-@import "src/styles/sass/config/susy";
-@import "src/styles/sass/config/typography";
-@import "src/styles/sass/config/global";
+@import "config/color";
+@import "config/susy";
+@import "config/typography";
+@import "config/global";
 
 // core
-@import "src/styles/sass/core/typography";
-@import "src/styles/sass/core/global";
+@import "core/typography";
+@import "core/global";
 
 // partial
-@import "src/styles/sass/partials/bootstrap";
-@import "src/styles/sass/partials/button";
-@import "src/styles/sass/partials/corner";
-@import "src/styles/sass/partials/generator";
-@import "src/styles/sass/partials/gototop";
-@import "src/styles/sass/partials/mobile";
-@import "src/styles/sass/partials/preview";
-@import "src/styles/sass/partials/social-object";
-@import "src/styles/sass/partials/rotate";
-@import "src/styles/sass/partials/upload";
+@import "partials/bootstrap";
+@import "partials/button";
+@import "partials/corner";
+@import "partials/generator";
+@import "partials/gototop";
+@import "partials/mobile";
+@import "partials/preview";
+@import "partials/rotate";
+@import "partials/upload";
 
 #formbuttons {
   margin-top: 6em;
@@ -36,7 +35,6 @@
   margin: 0;
   border: none;
   background-color: transparent;
-  color: white;
   border-bottom: 2px solid white;
   font-size: 24px;
   font-weight: normal;

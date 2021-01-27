@@ -9,9 +9,15 @@ body {
   background-color: $background-color;
   color: $text-black;
   font-size: $base-font-size;
+  font-family: Blender Pro;
   line-height: $base-line-height;
   padding: 20px 0;
 }
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+  font-family: Blender Pro;
+}
+
 a {
   @include link-colors($link-color, $link-color-hover);
   text-decoration: none;
@@ -22,7 +28,6 @@ a:hover {
 }
 
 #header {
-
 }
 #content {
   position: relative;

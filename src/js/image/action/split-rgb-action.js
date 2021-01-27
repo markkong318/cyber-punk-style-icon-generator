@@ -1,4 +1,4 @@
-class RgbSplitAction {
+class SplitRgbAction {
   static apply(graphic, options) {
     const imageData = graphic.getImageData();
 
@@ -21,4 +21,4 @@ class RgbSplitAction {
   }
 }
 
-export default RgbSplitAction;
+export default SplitRgbAction;
