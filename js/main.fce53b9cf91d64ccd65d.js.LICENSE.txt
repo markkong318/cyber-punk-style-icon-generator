@@ -1,12 +1,12 @@
 /*!
-   * Sizzle CSS Selector Engine v2.3.5
-   * https://sizzlejs.com/
+   * Sizzle CSS Selector Engine v1.10.19
+   * http://sizzlejs.com/
    *
-   * Copyright JS Foundation and other contributors
+   * Copyright 2013 jQuery Foundation, Inc. and other contributors
    * Released under the MIT license
-   * https://js.foundation/
+   * http://jquery.org/license
    *
-   * Date: 2020-03-14
+   * Date: 2014-04-18
    */
 
 /*!
@@ -142,17 +142,17 @@
    */
 
 /*!
- * jQuery JavaScript Library v3.5.1
- * https://jquery.com/
+ * jQuery JavaScript Library v1.11.1
+ * http://jquery.com/
  *
  * Includes Sizzle.js
- * https://sizzlejs.com/
+ * http://sizzlejs.com/
  *
- * Copyright JS Foundation and other contributors
+ * Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
  * Released under the MIT license
- * https://jquery.org/license
+ * http://jquery.org/license
  *
- * Date: 2020-05-04T22:49Z
+ * Date: 2014-05-01T17:42Z
  */
 
 /*!
