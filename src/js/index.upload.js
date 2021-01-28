@@ -7,7 +7,7 @@ import {
 } from "./util/el";
 
 $(function () {
-  var dropZone = document.getElementById('drop');
+  const dropZone = document.getElementById('drop');
   dropZone.addEventListener('dragover', handleDragOver, false);
   dropZone.addEventListener('drop', handleFileSelect, false);
 

@@ -1,7 +1,18 @@
+@font-face {
+  font-family: "Blender Pro";
+  src: url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.eot");
+  src: url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.svg#Blender Pro") format("svg");
+}
+
 html, body {
   // height: 100%;
 
 }
+
 body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -14,7 +25,7 @@ body {
   padding: 20px 0;
 }
 
-h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: Blender Pro;
 }
 
@@ -23,12 +34,14 @@ a {
   text-decoration: none;
   border-bottom: 1px solid white;
 }
+
 a:hover {
   text-decoration: none;
 }
 
 #header {
 }
+
 #content {
   position: relative;
   height: auto;
@@ -38,8 +51,10 @@ a:hover {
     height: inherit;
   }
 }
+
 #footer {
   margin: rhythm(1.5) auto;
+
   p {
     font-size: 14px;
     line-height: 1;

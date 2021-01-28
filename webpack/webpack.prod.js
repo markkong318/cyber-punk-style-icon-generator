@@ -7,6 +7,7 @@ const webpackMerge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const common = require("./webpack.common");
 
@@ -85,7 +86,7 @@ const config = {
                 optimizationLevel: 7
               },
               pngquant: {
-                quality: "65-90",
+                quality: [0.65, 0.90],
                 speed: 4
               },
               webp: {
@@ -134,7 +135,12 @@ const config = {
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash].css"
     }),
-    new webpack.HashedModuleIdsPlugin()
+    new webpack.HashedModuleIdsPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: "src/public"
+      }
+    ])
   ]
 };
 

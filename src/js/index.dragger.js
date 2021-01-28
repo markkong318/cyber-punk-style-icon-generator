@@ -10,11 +10,7 @@ $(document).ready(function () {
       if ($userImage.hasClass('dragged') === false) {
         $userImage.addClass('dragged');
       }
-
-      const value = $('input[name=template]:checked').val();
-      if (value === 9 || value === 10) {
-        $userImage.attr('class', 'inner');
-      }
     }
   });
 });
+

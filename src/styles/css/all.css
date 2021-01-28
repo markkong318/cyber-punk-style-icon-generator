@@ -61,7 +61,12 @@ p {
   word-wrap: break-word;
 }
 
-/* line 5, ../sass/core/_global.scss */
+@font-face {
+  font-family: "Blender Pro";
+  src: url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.eot");
+  src: url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.woff") format("woff"), url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a082fd3df68a0b54e0d4d794bc38d268.svg#Blender Pro") format("svg");
+}
+/* line 16, ../sass/core/_global.scss */
 body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -74,12 +79,12 @@ body {
   padding: 20px 0;
 }
 
-/* line 17, ../sass/core/_global.scss */
+/* line 28, ../sass/core/_global.scss */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: Blender Pro;
 }
 
-/* line 21, ../sass/core/_global.scss */
+/* line 32, ../sass/core/_global.scss */
 a {
   color: #000;
   text-decoration: none;
@@ -90,19 +95,19 @@ a:hover {
   color: #999;
 }
 
-/* line 26, ../sass/core/_global.scss */
+/* line 38, ../sass/core/_global.scss */
 a:hover {
   text-decoration: none;
 }
 
-/* line 32, ../sass/core/_global.scss */
+/* line 45, ../sass/core/_global.scss */
 #content {
   position: relative;
   height: auto;
   margin-top: 30px;
 }
 @media (min-width: 768px) {
-  /* line 32, ../sass/core/_global.scss */
+  /* line 45, ../sass/core/_global.scss */
   #content {
     height: inherit;
   }
@@ -112,11 +117,11 @@ a:hover {
   height: inherit;
 }
 
-/* line 41, ../sass/core/_global.scss */
+/* line 55, ../sass/core/_global.scss */
 #footer {
   margin: 2.25em auto;
 }
-/* line 43, ../sass/core/_global.scss */
+/* line 58, ../sass/core/_global.scss */
 #footer p {
   font-size: 14px;
   line-height: 1;
