@@ -11,8 +11,11 @@ $(document).ready(function () {
     var url = 'images/object/' + value + '.png';
 
     $coverImage.css('background-image', 'url(' + url + ')');
-    if ($userImage.hasClass('dragged') === true) $userImage.attr('class', 'inner dragged');
-    else $userImage.attr('class', 'inner');
+    if ($userImage.hasClass('dragged')) {
+      $userImage.attr('class', 'inner dragged');
+    } else {
+      $userImage.attr('class', 'inner');
+    }
 
     $('<img/>').attr('src', getBackgroundImage($userImage))
       .load(function () {

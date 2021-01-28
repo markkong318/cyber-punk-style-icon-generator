@@ -2,9 +2,9 @@ import resizeDragger from "./util/resize-dragger";
 import getImgSize from "./util/get-img-size";
 import getBackgroundImage from "./util/get-background-image";
 
-$(window).on('load', function () {
-  var $userImage = $('#userimage .inner');
+import { $userImage } from "./util/el";
 
+$(window).on('load', function () {
   const container_size = $userImage.width();
   const userimage_size = getImgSize(getBackgroundImage($userImage));
   resizeDragger(userimage_size, container_size);
