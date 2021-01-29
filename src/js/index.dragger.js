@@ -7,7 +7,7 @@ $(document).ready(function () {
   $dragger.draggable({
     drag: function () {
       $userImage.css('background-position', $dragger.css('left') + ' ' + $dragger.css('top'));
-      if ($userImage.hasClass('dragged') === false) {
+      if (!$userImage.hasClass('dragged')) {
         $userImage.addClass('dragged');
       }
     }
