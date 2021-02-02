@@ -1,15 +1,15 @@
 import {
-  $userImage,
-  $dragger,
+  $previewImage,
+  $dragImage,
 } from "./util/el";
 
-$(document).ready(function () {
-  $dragger.draggable({
-    drag: function () {
-      $userImage.css('background-position', $dragger.css('left') + ' ' + $dragger.css('top'));
-      if (!$userImage.hasClass('dragged')) {
-        $userImage.addClass('dragged');
-      }
+$(document).ready(() => {
+  $dragImage.draggable({
+    drag: () => {
+      $previewImage.css('background-position', $dragImage.css('left') + ' ' + $dragImage.css('top'));
+      // if (!$previewImage.hasClass('dragged')) {
+      //   $previewImage.addClass('dragged');
+      // }
     }
   });
 });

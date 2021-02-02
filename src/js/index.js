@@ -6,12 +6,14 @@ import '../vendor/konami';
 
 import '../vendor/jquery-ui-themes-1.9.2/themes/base/jquery-ui.css';
 import '../vendor/bootstrap/css/bootstrap.min.css';
-// import '../vendor/jquery.ui.core.css';
 import '../vendor/jquery.ui.resizable.css';
 import '../styles/css/all.css';
 
+import './jquery/background-image-extend';
+import './jquery/div-extend';
+
 import './index.window';
-import './index.normal-submit';
+import './index.submit';
 import './index.slider';
 import './index.upload';
 import './index.template';

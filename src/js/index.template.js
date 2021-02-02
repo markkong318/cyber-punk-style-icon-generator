@@ -1,27 +1,27 @@
-import resizeDragger from "./util/resize-dragger";
-import getBackgroundImage from "./util/get-background-image";
+// import resizeDragger from "./util/resize-dragger";
+// import getBackgroundImage from "./util/get-background-image";
 import {
-  $userImage,
+  // $previewImage,
   $coverImage,
 } from "./util/el";
 
-$(document).ready(function () {
+$(document).ready(() => {
   $('body').delegate('input[name=template]', 'change', function () {
-    var value = $(this).val();
-    var url = 'images/object/' + value + '.png';
+    const value = $(this).val();
+    const url = 'images/object/' + value + '.png';
 
     $coverImage.css('background-image', 'url(' + url + ')');
-    if ($userImage.hasClass('dragged')) {
-      $userImage.attr('class', 'inner dragged');
-    } else {
-      $userImage.attr('class', 'inner');
-    }
+    // if ($previewImage.hasClass('dragged')) {
+    //   $previewImage.attr('class', 'inner dragged');
+    // } else {
+    //   $previewImage.attr('class', 'inner');
+    // }
 
-    $('<img/>').attr('src', getBackgroundImage($userImage))
-      .load(function () {
-        const size = [this.width, this.height];
-        const container_size = $userImage.width();
-        resizeDragger(size, container_size, value);
-      });
+    // $('<img/>').attr('src', getBackgroundImage($previewImage))
+    //   .load(function () {
+    //     const size = [this.width, this.height];
+    //     const container_size = $previewImage.width();
+    //     resizeDragger(size, container_size);
+    //   });
   });
 });

@@ -1,8 +1,9 @@
-export const $userImage = $('#userimage .inner');
+export const $previewImage = $('#userimage .inner').installBackgroundImageExtend();
 export const $coverImage = $('#coverimage .inner');
-export const $dragger = $('#dragger');
-export const $sizer = $('#size-slider');
+export const $dragImage = $('#dragger').installDivExtend();
+export const $slider = $('#size-slider');
 export const $loading = $('#loading');
 export const $uploading = $('#uploading');
-export const $normalSubmit = $("#normalSubmit");
+export const $submit = $("#normalSubmit");
 export const $download = $('#download');
+export const $drop = $('#drop');
