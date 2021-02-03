@@ -1,14 +1,35 @@
-# 台灣街景封面產生器
+# Cypunk 2077 style icon generator
 
-## Demo
+## Description
 
-[這裡](http://twstreet.spotlights.news)
+[DEMO](markkong318.github.io/twstreet)
 
+## Install
 
-## 簡介
+Some basic Git commands are:
 
-本產生器參考[支持邱顯智 10 號頭像產生器](https://github.com/yhsiang/10) 開發
+```
+$ git clone https://github.com/markkong318/twstreet.git
+$ npm install
+```
 
-## 授權
+## Start
 
-專案採用 [BSD 授權](LICENSE)
+```
+$ npm start
+```
+
+## Simple build for production
+
+```
+$ npm run build
+```
+
+## Run the application for production
+
+```
+$ npm run serve
+```
+
+## Languages & tools
+- [Webpack jQuery Starter](https://github.com/mohamedsamara/webpack-jquery-starter.git)
