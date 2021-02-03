@@ -1,15 +1,4 @@
 .preview {
-  // position: fixed;
-  // top: 0;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
-  // width: 100%;
-  // height: 100%;
-  // z-index: 1200;
-  // z-index: -9999;
-  // background: rgba(200,200,200,.8);
-  // opacity: 0;
   position: relative;
   max-width: 500px;
   margin: 0 auto;
@@ -19,7 +8,6 @@
     content: "";
     display: block;
     padding-top: 100%;
-    // margin-bottom: 80px;
   }
 
   #baseImage,
@@ -55,7 +43,6 @@
     width: 0;
     height: 0;
     cursor: move;
-    // background: rgba(127,127,127,0.5);
   }
   #slider {
     position: absolute;
@@ -64,7 +51,6 @@
     right: 0;
     z-index: 100;
     margin: 0 20px;
-    // opacity: 0;
 
     &.ui-widget-content {
       @include border-radius(0px);
@@ -139,18 +125,4 @@
       margin-left: -21px;
     }
   }
-  // @include at-breakpoint($pad) {
-  //   display: block;
-  //   position: relative;
-  //   // min-height: 75%;
-  //   top: inherit;
-  //   bottom: inherit;
-  //   left: inherit;
-  //   right: inherit;
-  //   // background: none;
-  //   margin-top: -60px;
-  //   // z-index: 1000;
-  //   // opacity: 1;
-  //   height: inherit;
-  // }
 }

@@ -15,8 +15,10 @@ $(document).ready(() => {
     const templateId = $('input[name=template]:checked').val();
     const templateImage = await loadImages('images/object/' + templateId + '.png');
 
-    const [width, height] = $baseImage.getBackgroundSize().toArray();
-    const [x, y] = $baseImage.getBackgroundPosition().toArray();
+    const scale = $baseImage.width() / 500;
+
+    const [width, height] = $baseImage.getBackgroundSize().toArray().map(val => val / scale);
+    const [x, y] = $baseImage.getBackgroundPosition().toArray().map(val => val / scale);
 
     const graphic = Graphic.create(600, 600);
 
@@ -49,7 +51,7 @@ $(document).ready(() => {
     ShiftXAction.apply(graphic, {
       yStart: 300,
       yEnd: 305,
-      xOffset: -40,
+      xOffset: -10,
     });
 
     CropGraphicAction.apply(graphic, {
