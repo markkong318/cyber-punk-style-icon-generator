@@ -22,8 +22,8 @@
     // margin-bottom: 80px;
   }
 
-  #userimage,
-  #coverimage {
+  #baseImage,
+  #templateImage {
     width: 100%;
     height: 100%;
     max-width: 500px;
@@ -45,7 +45,7 @@
   // #coverimage:hover #size-slider {
   //   opacity: 1;
   // }
-  #coverimage {
+  #templateImage {
     overflow: hidden;
   }
   #dragger {
@@ -57,7 +57,7 @@
     cursor: move;
     // background: rgba(127,127,127,0.5);
   }
-  #size-slider {
+  #slider {
     position: absolute;
     bottom: -40px;
     left: 0;
@@ -112,7 +112,7 @@
       left: -17px;
     }
   }
-  #userimage .inner {
+  #baseImage .inner {
     background-color: #CCCCCC;
     // background-color: black;
   }

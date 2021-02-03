@@ -471,8 +471,8 @@ label.checkbox {
   padding-top: 100%;
 }
 /* line 25, ../sass/partials/_preview.scss */
-.preview #userimage,
-.preview #coverimage {
+.preview #baseImage,
+.preview #templateImage {
   width: 100%;
   height: 100%;
   max-width: 500px;
@@ -484,8 +484,8 @@ label.checkbox {
   margin: auto auto;
 }
 /* line 36, ../sass/partials/_preview.scss */
-.preview #userimage .inner,
-.preview #coverimage .inner {
+.preview #baseImage .inner,
+.preview #templateImage .inner {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -494,7 +494,7 @@ label.checkbox {
   -webkit-transform: translate3d(0, 0, 0);
 }
 /* line 48, ../sass/partials/_preview.scss */
-.preview #coverimage {
+.preview #templateImage {
   overflow: hidden;
 }
 /* line 51, ../sass/partials/_preview.scss */
@@ -507,7 +507,7 @@ label.checkbox {
   cursor: move;
 }
 /* line 60, ../sass/partials/_preview.scss */
-.preview #size-slider {
+.preview #slider {
   position: absolute;
   bottom: -40px;
   left: 0;
@@ -516,14 +516,14 @@ label.checkbox {
   margin: 0 20px;
 }
 /* line 69, ../sass/partials/_preview.scss */
-.preview #size-slider.ui-widget-content {
+.preview #slider.ui-widget-content {
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
   height: 1px;
 }
 /* line 73, ../sass/partials/_preview.scss */
-.preview #size-slider.ui-widget-content:before {
+.preview #slider.ui-widget-content:before {
   content: "";
   position: absolute;
   top: -21px;
@@ -538,9 +538,9 @@ label.checkbox {
   margin-left: -5%;
 }
 /* line 86, ../sass/partials/_preview.scss */
-.preview #size-slider .ui-state-default,
-.preview #size-slider .ui-widget-content .ui-state-default,
-.preview #size-slider .ui-widget-header .ui-state-default {
+.preview #slider .ui-state-default,
+.preview #slider .ui-widget-content .ui-state-default,
+.preview #slider .ui-widget-header .ui-state-default {
   outline: none;
   width: 30px;
   height: 30px;
@@ -553,26 +553,26 @@ label.checkbox {
   cursor: pointer;
 }
 /* line 98, ../sass/partials/_preview.scss */
-.preview #size-slider .ui-slider-handle {
+.preview #slider .ui-slider-handle {
   top: -0.9em;
   margin-left: -0.8em;
 }
 /* line 102, ../sass/partials/_preview.scss */
-.preview #size-slider .zoomin {
+.preview #slider .zoomin {
   color: #00ACB3;
   position: absolute;
   top: -15px;
   right: -17px;
 }
 /* line 108, ../sass/partials/_preview.scss */
-.preview #size-slider .zoomout {
+.preview #slider .zoomout {
   color: #00ACB3;
   position: absolute;
   top: -15px;
   left: -17px;
 }
 /* line 115, ../sass/partials/_preview.scss */
-.preview #userimage .inner {
+.preview #baseImage .inner {
   background-color: #CCCCCC;
 }
 /* line 119, ../sass/partials/_preview.scss */
@@ -707,7 +707,7 @@ label.checkbox {
 }
 
 /* line 1, ../sass/partials/_upload.scss */
-.uploadBtn {
+.uploadButton {
   cursor: pointer;
 }
 
@@ -717,12 +717,12 @@ input#uploadInput {
 }
 
 /* line 29, ../sass/all.scss */
-#formbuttons {
+#form {
   margin-top: 6em;
 }
 
 /* line 33, ../sass/all.scss */
-#normalSubmit {
+#submit {
   padding: 0;
   margin: 0;
   border: none;

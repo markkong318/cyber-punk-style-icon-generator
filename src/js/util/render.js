@@ -1,15 +1,13 @@
 import localStore from "../store/local-store";
-
 import {
-  $previewImage,
+  $baseImage,
   $dragImage,
 } from "./el";
 
-const resizeDragger = () => {
-
-  const [ imageWidth, imageHeight ] = $previewImage.getBackgroundImageSize().toArray();
-  const containerWidth = $previewImage.width();
-  const containerHeight = $previewImage.height();
+const render = () => {
+  const [ imageWidth, imageHeight ] = $baseImage.getBackgroundImageSize().toArray();
+  const containerWidth = $baseImage.width();
+  const containerHeight = $baseImage.height();
 
   let scale, width, height, top, left;
 
@@ -36,10 +34,11 @@ const resizeDragger = () => {
     .setSize(width, height)
     .setPosition(left, top);
 
-  $previewImage
+  $baseImage
     .setBackgroundSize(width, height)
     .setBackgroundPosition(left, top);
 };
 
-export default resizeDragger;
-
+export default {
+  preview: render,
+};

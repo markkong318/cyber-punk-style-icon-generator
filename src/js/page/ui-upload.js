@@ -1,42 +1,43 @@
-import resizeDragger from "./util/resize-dragger";
-
+import render from "../util/render";
 import {
-  $previewImage,
+  $baseImage,
   $loading,
   $uploading,
   $drop,
   $slider,
-} from "./util/el";
+  $uploadButton,
+  $uploadInput,
+} from "../util/el";
 
 $(function () {
-  $drop.on('dragover', (e) => {
+  $drop.on('dragover', function (e) {
     e.stopPropagation();
     e.preventDefault();
 
     const files = e.dataTransfer.files;
-    loadImage(files);
-  }, false);
-
-  $drop.on('drop', (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-
-    const files = e.dataTransfer.files;
-    loadImage(files);
-  }, false);
-
-  $('.uploadBtn').click(function () {
-    $('#uploadInput').click();
+    process(files);
   });
 
-  $('#uploadInput').on('change', function () {
-    loadImage($('#uploadInput')[0].files);
+  $drop.on('drop', function(e)  {
+    e.stopPropagation();
+    e.preventDefault();
+
+    const files = e.dataTransfer.files;
+    process(files);
+  });
+
+  $uploadButton.click(function() {
+    $uploadInput.click();
+  });
+
+  $uploadInput.on('change', function () {
+    process(this.files);
   });
 });
 
-const loadImage = (files) => {
+const process = (files) => {
   if (!files) {
-    alert('悲劇！您的瀏覽器不支援檔案上傳！');
+    alert('Sorry your browser does not support upload');
     return;
   }
 
@@ -46,8 +47,8 @@ const loadImage = (files) => {
   const file = files[0];
   const fr = new FileReader();
   fr.onload = async () => {
-    await $previewImage.updateImage(fr.result);
-    const img = $previewImage.getImage();
+    await $baseImage.updateImage(fr.result);
+    const img = $baseImage.getImage();
 
     const thumb = document.createElement('canvas');
 
@@ -68,7 +69,7 @@ const loadImage = (files) => {
     const thumbBase64 = thumb.toDataURL("image/png");
     $('#templates label').css('background-image', 'url(' + thumbBase64 + ')');
 
-    resizeDragger();
+    render.preview();
 
     $loading.hide();
     $uploading.fadeOut();

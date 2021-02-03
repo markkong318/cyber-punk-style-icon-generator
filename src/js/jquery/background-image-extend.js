@@ -24,6 +24,8 @@ $.fn.installBackgroundImageExtend = function() {
       const base64 = canvas.toDataURL("image/png");
 
       this.css('background-image', 'url(' + base64 + ')');
+
+      image = await loadImages(base64);
     },
     getImage: () => {
       return image;

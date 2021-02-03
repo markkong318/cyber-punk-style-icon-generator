@@ -12,9 +12,9 @@ import '../styles/css/all.css';
 import './jquery/background-image-extend';
 import './jquery/div-extend';
 
-import './index.window';
-import './index.submit';
-import './index.slider';
-import './index.upload';
-import './index.template';
-import './index.dragger';
+import './page/ui-window';
+import './page/ui-submit';
+import './page/ui-slider';
+import './page/ui-upload';
+import './page/ui.template';
+import './page/ui-dragger';
