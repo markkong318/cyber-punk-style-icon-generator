@@ -2,7 +2,7 @@
 
 ## Description
 
-[DEMO](markkong318.github.io/twstreet)
+[DEMO](https://markkong318.github.io/cyber-punk-style-icon-generator/)
 
 ## Install
 
